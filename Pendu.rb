@@ -2,7 +2,7 @@ require 'colorize'
 
 
 def clear()
-  system "cls"
+  system "cls" or system "clear"
 end
 
 
@@ -59,7 +59,7 @@ def getting_a_letter(letters_list, lifes, hidden_word, word_to_find)
   end
 
   while guess.length > 1 && guess != word_to_find
-    lifes = lifes - 1 
+    lifes = lifes - 1
     letters_list.push(guess)
     ask_user_to_give_letter(lifes, hidden_word, letters_list, "'#{guess}' is not the good word, try again: ", word_to_find)
     guess = gets.downcase.chomp.strip
@@ -79,7 +79,7 @@ def ask_user_to_give_letter(lifes, hidden_word, letters_list, prompt, word_to_fi
   letters_list.each do |letter|
     if letter_in_word_to_find(word_to_find, letter)
       print letter.green + ", "
-    else  
+    else
       print letter.red + ", "
     end
   end
