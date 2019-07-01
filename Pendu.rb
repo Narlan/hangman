@@ -1,10 +1,8 @@
 require 'colorize'
 
-
 def clear()
   system "cls" or system "clear"
 end
-
 
 def create_hidden_word(word_to_find)
   word_to_find = word_to_find.split("")
@@ -13,14 +11,12 @@ def create_hidden_word(word_to_find)
   return hidden_word.join()
 end
 
-
 def letter_in_word_to_find(word_to_find, guess)
   if guess.length > 1
     return false
   end
   return true if word_to_find.count(guess) > 0
 end
-
 
 def update_hidden_word(hidden_word, word_to_find, guess)
 
@@ -42,7 +38,6 @@ def update_hidden_word(hidden_word, word_to_find, guess)
   return hidden_word.join(" ")
 
 end
-
 
 def getting_a_letter(letters_list, lifes, hidden_word, word_to_find)
 
@@ -71,7 +66,6 @@ def getting_a_letter(letters_list, lifes, hidden_word, word_to_find)
 
 end
 
-
 def ask_user_to_give_letter(lifes, hidden_word, letters_list, prompt, word_to_find)
   clear()
   puts "You have #{lifes} lives: #{hidden_word}"
@@ -86,7 +80,6 @@ def ask_user_to_give_letter(lifes, hidden_word, letters_list, prompt, word_to_fi
   print "\n#{prompt}"
 end
 
-
 def continue?()
   choice = ""
   print "Do you want to continue? [y/n] "
@@ -95,7 +88,6 @@ def continue?()
     exit()
   end
 end
-
 
 while true
   round_running = true
