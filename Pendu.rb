@@ -126,7 +126,7 @@ while true
 
     if lifes == 0
       clear()
-      puts "You failed! The word was: #{word_to_find.upcase.green} !"
+      puts "You failed! The word was: #{word_to_find.upcase.red} !"
       continue?()
       round_running = false
     end
